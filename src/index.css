@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 235 33% 22%;
+    --foreground: 0 0% 95%;
+
+    --card: 235 20% 33%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 235 20% 28%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 199 63% 49%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 235 20% 28%;
+    --secondary-foreground: 230 10% 70%;
+
+    --muted: 235 15% 26%;
+    --muted-foreground: 230 10% 70%;
+
+    --accent: 199 63% 49%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 235 20% 30%;
+    --input: 235 20% 28%;
+    --ring: 199 63% 49%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 235 25% 18%;
+    --sidebar-foreground: 230 10% 70%;
+    --sidebar-primary: 199 63% 49%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 235 20% 25%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 235 20% 26%;
+    --sidebar-ring: 199 63% 49%;
+
+    /* Custom tokens */
+    --text-body: 230 10% 70%;
+    --text-heading: 0 0% 95%;
+    --surface-elevated: 235 20% 36%;
+    --primary-glow: 199 63% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+    letter-spacing: -0.03em;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(235, 33%, 22%);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(235, 20%, 40%);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(235, 20%, 50%);
+  }
+}
+
+@layer utilities {
+  .dot-grid {
+    background-image: radial-gradient(circle, hsl(0 0% 100% / 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .text-body {
+    color: hsl(var(--text-body));
+  }
+
+  .text-heading {
+    color: hsl(var(--text-heading));
+  }
+}
